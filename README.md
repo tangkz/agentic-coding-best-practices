@@ -24,16 +24,15 @@ To ensure your agent personas and instructions work across both tools, we use **
 2.  **Codex:** Secondary instructions live in `CLAUDE.md`.
 3.  **Universal:** We mirror the content across both files (and optionally `GEMINI.md`).
 
-#### Mirroring Workflow:
-If you are using Codex, simply copy the content of the project's `AGENTS.md` into a `CLAUDE.md` file in the same directory. 
-
-> [!TIP]
-> You can automate this mirroring using a simple script in the root `execution/` folder:
-> ```powershell
-> # execution/mirror_instructions.ps1
-> cp AGENTS.md CLAUDE.md
-> cp AGENTS.md GEMINI.md
-> ```
+#### Codex Activation Workflow:
+If you are using **Codex**, follow these steps:
+1.  Initialize your project using one of the templates.
+2.  In your terminal, run the execution script:
+    ```powershell
+    .\execution\mirror_instructions.ps1
+    ```
+3.  Codex will now pick up the `CLAUDE.md` file and adopt the specific Persona (e.g., SRE, UX Engineer).
+4.  As you "Self-Anneal" and update `AGENTS.md`, re-run the script to keep Codex in sync.
 
 ---
 
